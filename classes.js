@@ -30,6 +30,17 @@
 */
 
 //Code Here
+class Employee {
+  constructor(first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+  }
+  makeWidget() {
+    return this.first_name + ' ' + this.last_name + ' ' + 'Widget'
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -48,6 +59,19 @@
 */
 
 //Code Here
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age) {
+    super(first_name, last_name, email, age);
+    this.reports = [];
+  }
+  hire(Employee) {
+    this.reports.push(Employee)
+  }
+  fire(index) {
+    this.reports.splice(index, 1)
+    // console.log(22222, fire)
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -72,8 +96,33 @@
 */
 
 //Code Here
-
-
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age) {
+    super(first_name, last_name, email, age);
+    title = 'Not a manager';
+    bonus = 0;
+  }
+  hire(Employee) {
+    this.reports.push(Employee)
+    if (reports = 0) {
+      return 'Not a manager'
+    } if (reports < 0 && reports >= 3) {
+      return 'Barely Manager'
+    } if (reports <= 4 && reports >= 10) {
+      return 'Mostly Manager'
+    } if (reports <= 11 && reports >= 50) {
+      return 'Manager'
+    } if (reports <= 51 && reports >= 100) {
+      return 'Manager Plus'
+    } if (reports <= 101) {
+      return 'Manager Plus'
+    }
+  }
+  fire(index) {
+    this.reports.splice(index, 1);
+    this.bonus += 100
+  }
+}
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
@@ -99,5 +148,3 @@
 */
 
 //Code Here
-
-

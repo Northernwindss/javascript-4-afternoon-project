@@ -17,9 +17,16 @@
   email --> which is a string
   getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 */
-  
+
 
 //Code Here
+// user = {
+//   username = 'Colton',
+//   email= 'email@email',
+//   getUsername() {
+//     return this username + this.email
+//   }
+// }
 
 
 
@@ -42,7 +49,7 @@ class Animal {
 }
 
 //Code Here
-
+this.animal1 = new Animal('colton', 'human', 'meat')
 
 
 ////////// PROBLEM 3 //////////
@@ -62,7 +69,8 @@ let who = {
 }
 
 //Code Here
-
+whoSaysHi = sayHi.bind(who)
+console.log(whoSaysHi)
 
 
 ////////// PROBLEM 4 //////////
@@ -72,7 +80,7 @@ let who = {
 */
 
 function whatIsThis() {
-  return this
+  return this.this
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
